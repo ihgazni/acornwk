@@ -24,7 +24,11 @@ function creatTreeNodeV(node,rpl,name,depth,breadth,pbreadth) {
     d.node = node
     d.depth = depth
     d.breadth = breadth
-    d.parentBreadth = pbreadth
+    d.pbreadth = pbreadth
+    if(rpl === undefined){
+        rpl = []
+    } else {
+    }
     d.rpl = Array.from(rpl)
     if(name === undefined){
 

@@ -3,7 +3,7 @@ const gc = require('./children')
 const cmmn = require("./common")
 
 function isTroot(tnode) {
-    return(tnode.parentBreadth===undefined)
+    return(tnode.pbreadth===undefined)
 }
 
 function isTleaf(tnode) {
