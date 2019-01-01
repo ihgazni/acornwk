@@ -25,6 +25,8 @@ function creatTreeNodeV(node,rpl,name,depth,breadth,pbreadth) {
     d.depth = depth
     d.breadth = breadth
     d.pbreadth = pbreadth
+    d.srcloc = [node.start,node.end]
+    d.type = node.type
     if(rpl === undefined){
         rpl = []
     } else {

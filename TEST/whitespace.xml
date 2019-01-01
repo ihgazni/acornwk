@@ -1,0 +1,181 @@
+<root>
+  <body>
+    <0 type="ExpressionStatement" directive="use%20strict">
+      <expression type="Literal" value="use%20strict" raw="%22use%20strict%22">
+      </expression>
+    </0>
+    <1 type="ExpressionStatement">
+      <expression type="CallExpression">
+        <callee type="MemberExpression" computed="false">
+          <object type="Identifier" name="Object">
+          </object>
+          <property type="Identifier" name="defineProperty">
+          </property>
+        </callee>
+        <arguments>
+          <0 type="Identifier" name="exports">
+          </0>
+          <1 type="Literal" value="__esModule" raw="%22__esModule%22">
+          </1>
+          <2 type="ObjectExpression">
+            <properties>
+              <0 type="Property" method="false" shorthand="false" computed="false" kind="init">
+                <key type="Identifier" name="value">
+                </key>
+                <value type="Literal" value="true" raw="true">
+                </value>
+              </0>
+            </properties>
+          </2>
+        </arguments>
+      </expression>
+    </1>
+    <2 type="ExpressionStatement">
+      <expression type="AssignmentExpression" operator="%3D">
+        <left type="MemberExpression" computed="false">
+          <object type="Identifier" name="exports">
+          </object>
+          <property type="Identifier" name="isNewLine">
+          </property>
+        </left>
+        <right type="Identifier" name="isNewLine">
+        </right>
+      </expression>
+    </2>
+    <3 type="VariableDeclaration" kind="var">
+      <declarations>
+        <0 type="VariableDeclarator">
+          <id type="Identifier" name="lineBreak">
+          </id>
+          <init type="AssignmentExpression" operator="%3D">
+            <left type="MemberExpression" computed="false">
+              <object type="Identifier" name="exports">
+              </object>
+              <property type="Identifier" name="lineBreak">
+              </property>
+            </left>
+            <right type="Literal" value="/%5Cr%5Cn%3F%7C%5Cn%7C%5Cu2028%7C%5Cu2029/" raw="/%5Cr%5Cn%3F%7C%5Cn%7C%5Cu2028%7C%5Cu2029/" regex="%5Bobject%20Object%5D">
+            </right>
+          </init>
+        </0>
+      </declarations>
+    </3>
+    <4 type="VariableDeclaration" kind="var">
+      <declarations>
+        <0 type="VariableDeclarator">
+          <id type="Identifier" name="lineBreakG">
+          </id>
+          <init type="AssignmentExpression" operator="%3D">
+            <left type="MemberExpression" computed="false">
+              <object type="Identifier" name="exports">
+              </object>
+              <property type="Identifier" name="lineBreakG">
+              </property>
+            </left>
+            <right type="NewExpression">
+              <callee type="Identifier" name="RegExp">
+              </callee>
+              <arguments>
+                <0 type="MemberExpression" computed="false">
+                  <object type="Identifier" name="lineBreak">
+                  </object>
+                  <property type="Identifier" name="source">
+                  </property>
+                </0>
+                <1 type="Literal" value="g" raw="%22g%22">
+                </1>
+              </arguments>
+            </right>
+          </init>
+        </0>
+      </declarations>
+    </4>
+    <5 type="FunctionDeclaration" expression="false" generator="false" async="false">
+      <id type="Identifier" name="isNewLine">
+      </id>
+      <params>
+        <0 type="Identifier" name="code">
+        </0>
+        <1 type="Identifier" name="ecma2019String">
+        </1>
+      </params>
+      <body type="BlockStatement">
+        <body>
+          <0 type="ReturnStatement">
+            <argument type="LogicalExpression" operator="%7C%7C">
+              <left type="LogicalExpression" operator="%7C%7C">
+                <left type="BinaryExpression" operator="%3D%3D%3D">
+                  <left type="Identifier" name="code">
+                  </left>
+                  <right type="Literal" value="10" raw="10">
+                  </right>
+                </left>
+                <right type="BinaryExpression" operator="%3D%3D%3D">
+                  <left type="Identifier" name="code">
+                  </left>
+                  <right type="Literal" value="13" raw="13">
+                  </right>
+                </right>
+              </left>
+              <right type="LogicalExpression" operator="%26%26">
+                <left type="UnaryExpression" operator="%21" prefix="true">
+                  <argument type="Identifier" name="ecma2019String">
+                  </argument>
+                </left>
+                <right type="LogicalExpression" operator="%7C%7C">
+                  <left type="BinaryExpression" operator="%3D%3D%3D">
+                    <left type="Identifier" name="code">
+                    </left>
+                    <right type="Literal" value="8232" raw="0x2028">
+                    </right>
+                  </left>
+                  <right type="BinaryExpression" operator="%3D%3D%3D">
+                    <left type="Identifier" name="code">
+                    </left>
+                    <right type="Literal" value="8233" raw="0x2029">
+                    </right>
+                  </right>
+                </right>
+              </right>
+            </argument>
+          </0>
+        </body>
+      </body>
+    </5>
+    <6 type="VariableDeclaration" kind="var">
+      <declarations>
+        <0 type="VariableDeclarator">
+          <id type="Identifier" name="nonASCIIwhitespace">
+          </id>
+          <init type="AssignmentExpression" operator="%3D">
+            <left type="MemberExpression" computed="false">
+              <object type="Identifier" name="exports">
+              </object>
+              <property type="Identifier" name="nonASCIIwhitespace">
+              </property>
+            </left>
+            <right type="Literal" value="/%5B%5Cu1680%5Cu180e%5Cu2000-%5Cu200a%5Cu202f%5Cu205f%5Cu3000%5Cufeff%5D/" raw="/%5B%5Cu1680%5Cu180e%5Cu2000-%5Cu200a%5Cu202f%5Cu205f%5Cu3000%5Cufeff%5D/" regex="%5Bobject%20Object%5D">
+            </right>
+          </init>
+        </0>
+      </declarations>
+    </6>
+    <7 type="VariableDeclaration" kind="var">
+      <declarations>
+        <0 type="VariableDeclarator">
+          <id type="Identifier" name="skipWhiteSpace">
+          </id>
+          <init type="AssignmentExpression" operator="%3D">
+            <left type="MemberExpression" computed="false">
+              <object type="Identifier" name="exports">
+              </object>
+              <property type="Identifier" name="skipWhiteSpace">
+              </property>
+            </left>
+          </init>
+        </0>
+      </declarations>
+    </7>
+  </body>
+</root>
+

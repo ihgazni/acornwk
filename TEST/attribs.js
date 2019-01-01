@@ -1,7 +1,6 @@
 const elel = require("elist")
 const cmmn = require("./common")
 
-
 function engine(tnode,...names) {
     let rpl = tnode.rpl
     let args = cmmn.creatEngineArgs(tnode,...names)
@@ -22,93 +21,84 @@ function engine(tnode,...names) {
 }
 
 const KEYS = {
-    _Program:["body"],
-    _Function:["id","params","body"],
-    _ExpressionStatement:["expression"],
-    _IfStatement:["test","consequent","alternate"],
-    _SwitchStatement:["discriminant","cases"],
-    _LabeledStatement:["body","label"],
-    _ContinueStatement:["label"],
-    _BreakStatement:["label"],
-    _WithStatement:["object","body"],
-    _BlockStatement:["body"],
+    _Program:["sourceType"],
+    _Function:["generator","async"],
+    _ExpressionStatement:["directive"],
+    _IfStatement:[],
+    _SwitchStatement:[],
+    _LabeledStatement:[],
+    _ContinueStatement:[],
+    _BreakStatement:[],
+    _WithStatement:[],
+    _BlockStatement:[],
     _EmptyStatement:[],
     _DebuggerStatement:[],
-    _ReturnStatement:["argument"],
-    _ThrowStatement:["argument"],
-    _TryStatement:["block","handler","finalizer"],
-    _DoWhileStatement:["body","test"],
-    _WhileStatement:["test","body"],
-    _ForStatement:["init","test","update","body"],
-    _ForOfStatement:["left","right","body"],
-    _ForInStatement:["left","right","body"],
+    _ReturnStatement:[],
+    _ThrowStatement:[],
+    _TryStatement:[],
+    _DoWhileStatement:[],
+    _WhileStatement:[],
+    _ForStatement:[],
+    _ForOfStatement:["await"],
+    _ForInStatement:[],
     _ThisExpression:[],
-    _ArrayExpression:["elements"],
-    _ObjectExpression:["properties"],
-    _Property:["key","value"],
-    _UnaryExpression:["argument"],
+    _ArrayExpression:[],
+    _ObjectExpression:[],
+    _Property:["kind","method","shorthand","computed"],
+    _UnaryExpression:["operator","prefix"],
     _UnaryOperator:[],
-    _UpdateExpression:["argument"],
+    _UpdateExpression:["operator","prefix"],
     _UpdateOperator:[],
-    _BinaryExpression:["left","right"],
+    _BinaryExpression:["operator"],
     _BinaryOperator:[],
-    _AssignmentExpression:["left","right"],
+    _AssignmentExpression:["operator"],
     _AssignmentOperator:[],
-    _LogicalExpression:["left","right"],
+    _LogicalExpression:["operator"],
     _LogicalOperator:[],
-    _MemberExpression:["object","property"],
-    _ConditionalExpression:["test","alternate","consequent"],
-    _CallExpression:["callee","arguments"],
-    _NewExpression:["callee","arguments"],
-    _SequenceExpression:["expressions"],
-    _ArrowFunctionExpression:["params","body"],
-    _YieldExpression:["argument"],
-    _AwaitExpression:["argument"],
-    _VariableDeclaration:["declarations"],
-    _VariableDeclarator:["id","init"],
-    _FunctionBody:["body"],
-    _SwitchCase:["consequent","test"],
-    _CatchClause:["param","body"],
-    _Identifier:[],
-    _Literal:[],
-    _RegExpLiteral:[],
+    _MemberExpression:["computed"],
+    _ConditionalExpression:[],
+    _CallExpression:[],
+    _NewExpression:[],
+    _SequenceExpression:[],
+    _ArrowFunctionExpression:["expression"],
+    _YieldExpression:["delegate"],
+    _AwaitExpression:[],
+    _VariableDeclaration:["kind"],
+    _VariableDeclarator:[],
+    _FunctionBody:[],
+    _SwitchCase:[],
+    _CatchClause:[],
+    _Identifier:["name"],
+    _Literal:["value","raw","regex"],
+    _RegExpLiteral:["value","raw","regex"],
     _Super:[],
-    _SpreadElement:["argument"],
-    _TemplateLiteral:["quasis","expressions"],
-    _TemplateElement:[],
-    _TaggedTemplateExpression:["tag","quasi"],
-    _ObjectPattern:["properties"],
-    _AssignmentProperty:["value"],
-    _AssignmentPattern:["left","right"],
-    _ArrayPattern:["elements"],
-    _RestElement:["argument"],
+    _SpreadElement:[],
+    _TemplateLiteral:[],
+    _TemplateElement:["tail","value"],
+    _TaggedTemplateExpression:[],
+    _ObjectPattern:[],
+    _AssignmentProperty:["kind","method"],
+    _AssignmentPattern:[],
+    _ArrayPattern:[],
+    _RestElement:[],
     _VariablePattern:[],
-    _Class:["id","superClass","body"],
-    _ClassDeclaration:["id","superClass","body"],
-    _ClassBody:["body"],
-    _MethodDefinition:["key","value"],
-    _ClassExpression:["id","superClass","body"],
-    _MetaProperty:["meta","property"],
+    _Class:[],
+    _ClassDeclaration:[],
+    _ClassBody:[],
+    _MethodDefinition:["kind","computed","static"],
+    _ClassExpression:[],
+    _MetaProperty:[],
     _ModuleDeclaration:[],
-    _ModuleSpecifier:["local"],
-    _ImportDeclaration:["specifiers","source"],
-    _ImportSpecifier:["imported"],
+    _ModuleSpecifier:[],
+    _ImportDeclaration:[],
+    _ImportSpecifier:[],
     _ImportDefaultSpecifier:[],
     _ImportNamespaceSpecifier:[],
-    _ExportSpecifier:["exported"],
-    _ExportDefaultDeclaration:["declaration"],
-    _ExportNamedDeclaration:["declaration","specifiers","source"],
-    _ExportAllDeclaration:["source"]
+    _ExportSpecifier:[],
+    _ExportDefaultDeclaration:[],
+    _ExportNamedDeclaration:[],
+    _ExportAllDeclaration:[]
 }
-
-KEYS._Programs = KEYS._Program
-KEYS._FunctionDeclaration = KEYS._Function
-KEYS._FunctionExpression = KEYS._Function
-KEYS._ParenthesizedExpression = KEYS._ExpressionStatement
-KEYS._Directive = KEYS._ExpressionStatement
-KEYS._MemberPattern = KEYS._MemberExpression
-
-
 //
 
 FUNCS = {
@@ -327,9 +317,6 @@ function isLeaf(tnode) {
     let children = getChildren(tnode)
     return((children.length === 0))
 }
-
-
-//
 
 module.exports = {
     FUNCS:FUNCS,
