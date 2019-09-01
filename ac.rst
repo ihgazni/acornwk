@@ -1,6 +1,6 @@
-- index.js/parse
-- state.js/Parser
-- state.js/startNode
-- startNode  in node.js
-- nextToken in  tokenize.js
-- parseTopLevel in parseTopLevel
+- index.js  Parser.parse(input, options)
+- state.js  Parser.parse(input, options)
+- state.js  Parser.parse(input, options)
+- startNode()  node.js
+- nextToken()  tokenize.js
+- parseTopLevel() parseTopLevel
