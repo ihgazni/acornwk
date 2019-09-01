@@ -1,2 +1,6 @@
 - index.js/parse
 - state.js/Parser
+- state.js/startNode
+- startNode  in node.js
+- nextToken in  tokenize.js
+- parseTopLevel in parseTopLevel
